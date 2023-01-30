@@ -1,9 +1,18 @@
 <h1>目標一覧</h1>
+<%= link_to "目標の設定", new_task_path %>
 <p>設定した目標の一覧です</p>
-
+<table class="table table-dark">
+<tbody>
 <% @tasks.each do |task| %>
-<%= task.deadline %>
-<%= task.task %>
-<%= task.comment %>
-
+<tr>
+<td>目標達成締切<%= task.deadline %></td>
+</tr>
+<tr>
+<td>目標<%= task.task %></td>
+</tr>
+<tr>
+<td>補足<%= task.comment %></td>
+</tr>
 <% end %>
+</tbody>
+</table>
