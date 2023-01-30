@@ -1,9 +1,9 @@
-<h1>目標投稿</h1>
+<h1>目標一覧</h1>
+<p>設定した目標の一覧です</p>
 
-<%= form_with model: @task do |f| %>
-<%= f.date_field :deadline %>
-<%= f.text_area :task %>
-<%= f.text_area :comment %>
+<% @tasks.each do |task| %>
+<%= task.deadline %>
+<%= task.task %>
+<%= task.comment %>
 
-<%= f.submit '目標を投稿する', class:"btn btn-primary" %>
 <% end %>
