@@ -11,6 +11,44 @@
   </head>
 
   <body>
+    <header class="sticky-top"> <!--ヘッダーを画面上部へ固定-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-warning"> <!--navバーの作成-->
+        <!--アプリケーションのiconを表示(後日）-->
+        <!--%= image_tag "", width: "5%" %>-->
+        <!--アプリケーション名を表示-->
+          <%= link_to "MOKUHYO TASSEI", root_path,class: "navbar-brand" %>
+        <!--ハンバーガーメニューの作成-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+      <!--ユーザーサインイン後のヘッダー-->
+        <% if user_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to "目標を投稿する", new_task_path, class: "nav-link" %>
+            </li>
+        <li class="nav-item active">
+          <%= link_to "目標一覧", tasks_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+
+        <% else %>
+        <!--ユーザーログアウト後のヘッダー-->
+        <li class="nav-item active">
+         <%= link_to "ユーザーログイン", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "新規ユーザー登録", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+　    </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
