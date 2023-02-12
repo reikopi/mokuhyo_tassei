@@ -12,7 +12,7 @@
 
   <body>
     <header class="sticky-top"> <!--ヘッダーを画面上部へ固定-->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-warning"> <!--navバーの作成-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white"> <!--navバーの作成-->
         <!--アプリケーションのiconを表示(後日）-->
         <!--%= image_tag "", width: "5%" %>-->
         <!--アプリケーション名を表示-->
@@ -50,5 +50,14 @@
 　    </nav>
     </header>
     <%= yield %>
+
+      <footer class="bg-dark text-white mt-5 pt-5 pb-4">
+      <!--アプリの文字と作成者-->
+      <div class="row justify-content-center">
+      <p>MOKUHYO TASSEI</br>
+      made by REIKOPI</p>
+      </div>
+    </footer>
+
   </body>
 </html>
