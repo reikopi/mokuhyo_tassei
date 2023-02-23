@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2023_01_13_115422) do
     t.date "deadline", null: false
     t.text "task", null: false
     t.text "comment"
+    t.boolean "achievement", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
