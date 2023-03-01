@@ -1,0 +1,15 @@
+<h1  class="text-center">達成済み目標</h1>
+<%= link_to "目標の設定", new_task_path %>
+<p  class="text-center">達成済みの目標一覧です</p>
+<table class="table table-dark">
+<tbody>
+<% @tasks.each do |task| %>
+<tr>
+<td>目標<%= task.task %></td>
+</tr>
+<tr>
+<td>補足<%= task.comment %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
