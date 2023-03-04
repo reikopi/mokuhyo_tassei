@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'homes#top'
+  get 'homes/achievement', to: 'homes#achievement'
   get 'homes/top'
   devise_for :users
   resources :tasks,only: [:index, :new, :create, :show, :edit, :update, :destroy]
