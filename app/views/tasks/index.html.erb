@@ -8,7 +8,7 @@
     <h4 class="card-title">目標:<%= task.task %></h4>
     <p class="card-text">補足:<%= task.comment %></p>
     <a>目標達成締切:<%= task.deadline %></a>
-    <a href="#" class="card-link">Link2</a>
+    <a><%= link_to "修正", edit_task_path(task.id) %></a>
   </div>
 </div>
 <% end %>
