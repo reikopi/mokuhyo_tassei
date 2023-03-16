@@ -3,6 +3,7 @@
 <p  class="text-center">達成済みの目標一覧です</p>
 <table class="table table-dark">
 <tbody>
+<!--達成した目標のみ表示-->
 <% @tasks.each do |task| %>
 <tr>
 <td>目標<%= task.task %></td>

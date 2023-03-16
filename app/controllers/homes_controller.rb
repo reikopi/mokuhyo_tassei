@@ -4,6 +4,6 @@ class HomesController < ApplicationController
 
   # 達成した目標だけ表示する
   def achievement
-    @tasks = Task.all
+    @tasks = Task.all.where(achievement: true)
   end
 end
