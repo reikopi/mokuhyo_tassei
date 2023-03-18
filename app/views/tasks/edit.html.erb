@@ -1,6 +1,6 @@
 <h1  class="text-center">目標編集</h1>
 
-<%= form_with model: @task,  task_path, method: :patch do |f| %>
+<%= form_with model: @task, url: task_path, method: :patch do |f| %>
 <p>締切<%= f.date_field :deadline %></p>
 <p>目標<%= f.text_area :task %></p>
 <p>補足<%= f.text_area :comment %></p>
