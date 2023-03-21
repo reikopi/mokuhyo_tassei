@@ -27,7 +27,7 @@ class TasksController < ApplicationController
   end
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all.where(achievement: false)
   end
 
   private
