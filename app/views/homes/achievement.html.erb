@@ -5,12 +5,12 @@
 <tbody>
 <!--達成した目標のみ表示-->
 <% @tasks.each do |task| %>
-<tr>
-<td>目標<%= task.task %></td>
-</tr>
-<tr>
-<td>補足<%= task.comment %></td>
-</tr>
+<div class="card" style="width:300px;">
+  <div class="card-body">
+    <h4 class="card-title">目標<%= task.task %></h4>
+    <p class="card-text">補足<%= task.comment %></p>
+  </div>
+</div>
 <% end %>
 </tbody>
 </table>
