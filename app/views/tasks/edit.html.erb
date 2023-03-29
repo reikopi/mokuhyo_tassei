@@ -1,18 +1,30 @@
 <h1 class="text-center">目標編集</h1>
 
+<div class="text-center">
 <%= form_with model: @task, url: task_path, method: :patch do |f| %>
-<p>締切<%= f.date_field :deadline %></p>
-<p>目標<%= f.text_area :task %></p>
-<p>補足<%= f.text_area :comment %></p>
-<p>目標達成有無
-<%= f.radio_button :achievement, true %>
-<%= f.label :achievement, "達成" %>
-<%= f.radio_button :achievement, false %>
-<%= f.label :achievement, "未達成" %>
-</p>
+
+<table class="table">
+    <tbody>
+        <tr><th class="table-active">締切</th>
+        <th><%= f.date_field :deadline %></th></tr>
+
+        <tr><th class="table-active">目標</th>
+        <th><%= f.text_area :task %></th></tr>
+
+        <tr><th class="table-active">補足</th>
+        <th><%= f.text_area :comment %></th></tr>
+
+        <tr><th class="table-active">目標達成有無</th>
+        <th><%= f.radio_button :achievement, true %>
+            <%= f.label :achievement, "達成" %>
+            <%= f.radio_button :achievement, false %>
+            <%= f.label :achievement, "未達成" %></th></tr>
+    </tbody>
+</table>
 
 
 <%= f.submit '目標を編集する', class:"btn btn-primary" %>
 <% end %>
 
 <%= link_to "目標一覧", tasks_path %>
+</div>
